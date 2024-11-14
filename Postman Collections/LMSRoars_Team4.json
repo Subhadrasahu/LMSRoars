@@ -2310,12 +2310,6 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTU5MjI4NCwiZXhwIjoxNzMxNjIxMDg0fQ.SdH8j19j9nVY1r5jeenEZr3lw9kmyJTK6qIMWAJChNXC2JvYXO2xn1h8MKQ4lYXRvnEyJ-gDvEVV0HV5A6HMmQ\""
-					}
-				},
 				"method": "{{METHOD}}",
 				"header": [],
 				"body": {
@@ -2375,12 +2369,6 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTU5MjI4NCwiZXhwIjoxNzMxNjIxMDg0fQ.SdH8j19j9nVY1r5jeenEZr3lw9kmyJTK6qIMWAJChNXC2JvYXO2xn1h8MKQ4lYXRvnEyJ-gDvEVV0HV5A6HMmQ"
-					}
-				},
 				"method": "{{METHOD}}",
 				"header": [],
 				"url": "{{baseURL}}{{endpoint}}"
@@ -2478,12 +2466,6 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTU5MjI4NCwiZXhwIjoxNzMxNjIxMDg0fQ.SdH8j19j9nVY1r5jeenEZr3lw9kmyJTK6qIMWAJChNXC2JvYXO2xn1h8MKQ4lYXRvnEyJ-gDvEVV0HV5A6HMmQ"
-					}
-				},
 				"method": "{{METHOD}}",
 				"header": [],
 				"body": {
@@ -2535,12 +2517,6 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTU5MjI4NCwiZXhwIjoxNzMxNjIxMDg0fQ.SdH8j19j9nVY1r5jeenEZr3lw9kmyJTK6qIMWAJChNXC2JvYXO2xn1h8MKQ4lYXRvnEyJ-gDvEVV0HV5A6HMmQ"
-					}
-				},
 				"method": "{{METHOD}}",
 				"header": [],
 				"body": {
@@ -2601,12 +2577,6 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": {
-						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTU5MjI4NCwiZXhwIjoxNzMxNjIxMDg0fQ.SdH8j19j9nVY1r5jeenEZr3lw9kmyJTK6qIMWAJChNXC2JvYXO2xn1h8MKQ4lYXRvnEyJ-gDvEVV0HV5A6HMmQ"
-					}
-				},
 				"method": "{{METHOD}}",
 				"header": [],
 				"body": {
