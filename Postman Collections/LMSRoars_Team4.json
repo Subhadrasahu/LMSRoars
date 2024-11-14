@@ -4043,7 +4043,7 @@
 							"            'no record found with',\r",
 							"            'Application Error',\r",
 							"            'Invalid endpoint',\r",
-							"            'Batch id not found or not exists {prg1_batchId2}',\r",
+							"            'Batch id not found or not exists ${prg1_batchId2}',\r",
 							"            expectedMessage\r",
 							"        ];\r",
 							"\r",
