@@ -1426,23 +1426,23 @@
 							"console.log(\"Json file batchName ::\" +pm.variables.get('batchName'));\r",
 							"console.log(\"CollectionVariable Name::\" + pm.collectionVariables.get('programId1'));\r",
 							"\r",
-							"if(pm.variables.get('batchName') == \"prg1Oracle311\")\r",
+							"if(pm.variables.get('batchName') == \"prg1Oracle61\")\r",
 							"{   \r",
 							"    pm.variables.set(\"programId\",pm.collectionVariables.get('programId1'));\r",
 							"    pm.variables.set('programName',pm.collectionVariables.get('programName1'))\r",
 							"}\r",
-							"else if((pm.variables.get('batchName') == \"prg1Oracle312\"))\r",
+							"else if((pm.variables.get('batchName') == \"prg1Oracle62\"))\r",
 							"{\r",
 							"      pm.variables.set(\"programId\",pm.collectionVariables.get('programId1'));\r",
 							"    pm.variables.set('programName',pm.collectionVariables.get('programName1'))\r",
 							"\r",
 							"}\r",
-							"else if((pm.variables.get('batchName') == \"prg2Python311\"))\r",
+							"else if((pm.variables.get('batchName') == \"prg1Python61\"))\r",
 							"{\r",
 							"      pm.variables.set(\"programId\",pm.collectionVariables.get('programId2'));\r",
 							"    pm.variables.set('programName',pm.collectionVariables.get('programName2'))\r",
 							"}\r",
-							"else if((pm.variables.get('batchName') == \"prg2Python312\"))\r",
+							"else if((pm.variables.get('batchName') == \"prg1Python62\"))\r",
 							"{\r",
 							"     pm.variables.set(\"programId\",pm.collectionVariables.get('programId2'));\r",
 							"    pm.variables.set('programName',pm.collectionVariables.get('programName2'))\r",
@@ -1515,22 +1515,22 @@
 							"\r",
 							"const result = JSON.parse(responseBody)\r",
 							"console.log(\"BAtch ID:\"+ result.batchId  + result.batchName);\r",
-							"if (pm.response.code === 201 && result.batchName === \"prg1Oracle311\") {    \r",
+							"if (pm.response.code === 201 && result.batchName === \"prg1Oracle61\") {    \r",
 							"    console.log('creating collectionVariable - prog1batchId1 && prog1batchName1.');          \r",
 							"    pm.collectionVariables.set(\"prg1_batchId1\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg1_batchName1\", result.batchName); \r",
 							"}\r",
-							"else if (pm.response.code === 201 && result.batchName === \"prg1Oracle312\") {  \r",
+							"else if (pm.response.code === 201 && result.batchName === \"prg1Oracle62\") {  \r",
 							"    console.log('creating collectionVariable - prog1batchId2 && prog1batchName2.');       \r",
 							"    pm.collectionVariables.set(\"prg1_batchId2\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg1_batchName2\", result.batchName); \r",
 							"}\r",
-							"else if (pm.response.code === 201 && result.batchName === \"prg2Python311\") {   \r",
+							"else if (pm.response.code === 201 && result.batchName === \"prg1Python61\") {   \r",
 							"   console.log('creating collectionVariable - prog2batchId1 && prog2batchName1.');          \r",
 							"    pm.collectionVariables.set(\"prg2_batchId1\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg2_batchName1\", result.batchName); \r",
 							"}\r",
-							"else if (pm.response.code === 201 && result.batchName === \"prg2Python312\") {   \r",
+							"else if (pm.response.code === 201 && result.batchName === \"prg1Python62\") {   \r",
 							"   console.log('creating collectionVariable - prog2batchId2 && prog2batchName2.');          \r",
 							"    pm.collectionVariables.set(\"prg2_batchId2\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg2_batchName2\", result.batchName); \r",
@@ -2533,66 +2533,6 @@
 			"response": []
 		},
 		{
-			"name": "GET_CLASS_BY_CSTOPIC",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "5ae11001-ef47-444c-b36c-a30fd4efc375",
-						"exec": [
-							"var method=pm.variables.get('method');\r",
-							"pm.variables.set('METHOD',method);\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "e31a27c5-53f9-4fbf-9d2a-20c5282584c3",
-						"exec": [
-							"\r",
-							"//3.content type validation\r",
-							" pm.test(\"Content-Type-Validation\",function () {\r",
-							"        pm.response.to.have.header('Content-Type', 'application/json');\r",
-							"    });\r",
-							"\r",
-							"pm.test(\"StatusCodeValidation\", function () {\r",
-							" const expStatusCode = pm.variables.get('expectedStatusCode');\r",
-							"    pm.response.to.have.status(expStatusCode);    \r",
-							"});\r",
-							"\r",
-							"\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"id": "f46869c2-c677-43b4-967c-3dd0cb09cd7e",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "{{METHOD}}",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{baseURL}}{{endpoint}}{{classTopic}}"
-			},
-			"response": []
-		},
-		{
 			"name": "GET ALL CLASSES BY BATCHID",
 			"event": [
 				{
@@ -2757,7 +2697,7 @@
 						}
 					}
 				},
-				"url": "{{baseURL}}{{GetAllClassesBatchIdEndpoint}}{{prg1_batchId1}}"
+				"url": "{{baseURL}}{{GetAllClassesBatchIdEndpoint}}{{prg2_batchId2}}"
 			},
 			"response": []
 		},
@@ -3097,6 +3037,66 @@
 				"method": "{{METHOD}}",
 				"header": [],
 				"url": "{{baseURL}}{{GetClassRecordingsByClassIdEndpoint}}{{classId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "GET_CLASS_BY_CSTOPIC",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5ae11001-ef47-444c-b36c-a30fd4efc375",
+						"exec": [
+							"var method=pm.variables.get('method');\r",
+							"pm.variables.set('METHOD',method);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e31a27c5-53f9-4fbf-9d2a-20c5282584c3",
+						"exec": [
+							"\r",
+							"//3.content type validation\r",
+							" pm.test(\"Content-Type-Validation\",function () {\r",
+							"        pm.response.to.have.header('Content-Type', 'application/json');\r",
+							"    });\r",
+							"\r",
+							"pm.test(\"StatusCodeValidation\", function () {\r",
+							" const expStatusCode = pm.variables.get('expectedStatusCode');\r",
+							"    pm.response.to.have.status(expStatusCode);    \r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "f46869c2-c677-43b4-967c-3dd0cb09cd7e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "{{METHOD}}",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}{{endpoint}}{{classTopic}}"
 			},
 			"response": []
 		},
@@ -4336,6 +4336,78 @@
 		},
 		{
 			"key": "deleteprogramName1",
+			"value": ""
+		},
+		{
+			"key": "prg1_batchName1",
+			"value": ""
+		},
+		{
+			"key": "prg1_batchId2",
+			"value": ""
+		},
+		{
+			"key": "prg1_batchName2",
+			"value": ""
+		},
+		{
+			"key": "prg2_batchId1",
+			"value": ""
+		},
+		{
+			"key": "prg2_batchName1",
+			"value": ""
+		},
+		{
+			"key": "prg2_batchId2",
+			"value": ""
+		},
+		{
+			"key": "prg2_batchName2",
+			"value": ""
+		},
+		{
+			"key": "classId2",
+			"value": ""
+		},
+		{
+			"key": "classTopic",
+			"value": ""
+		},
+		{
+			"key": "classDate",
+			"value": ""
+		},
+		{
+			"key": "classNo",
+			"value": ""
+		},
+		{
+			"key": "classStaffId",
+			"value": ""
+		},
+		{
+			"key": "classStatus",
+			"value": ""
+		},
+		{
+			"key": "classDescription",
+			"value": ""
+		},
+		{
+			"key": "classComments",
+			"value": ""
+		},
+		{
+			"key": "classNotes",
+			"value": ""
+		},
+		{
+			"key": "classRecordingPath",
+			"value": ""
+		},
+		{
+			"key": "classScheduledDates",
 			"value": ""
 		}
 	]
