@@ -4231,7 +4231,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2dd44825-a3c7-4385-a79c-591a30b0bfda",
+				"id": "56f4f253-821a-4ff5-91da-afe80ebf9948",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -4279,7 +4279,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6a3107a5-a357-4db2-bae4-dbb7225651e8",
+				"id": "8d468a26-409a-4a65-9f9d-61578f926618",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -4315,10 +4315,6 @@
 			"value": ""
 		},
 		{
-			"key": "classId",
-			"value": ""
-		},
-		{
 			"key": "batchName",
 			"value": ""
 		},
@@ -4328,14 +4324,6 @@
 		},
 		{
 			"key": "token",
-			"value": ""
-		},
-		{
-			"key": "batchID",
-			"value": ""
-		},
-		{
-			"key": "Token",
 			"value": ""
 		}
 	]
