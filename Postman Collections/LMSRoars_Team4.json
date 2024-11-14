@@ -1530,7 +1530,7 @@
 							"    pm.collectionVariables.set(\"prg2_batchId1\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg2_batchName1\", result.batchName); \r",
 							"}\r",
-							"else if (pm.response.code === 201 && result.batchName === \"prg2Python311\") {   \r",
+							"else if (pm.response.code === 201 && result.batchName === \"prg2Python312\") {   \r",
 							"   console.log('creating collectionVariable - prog2batchId2 && prog2batchName2.');          \r",
 							"    pm.collectionVariables.set(\"prg2_batchId2\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg2_batchName2\", result.batchName); \r",
