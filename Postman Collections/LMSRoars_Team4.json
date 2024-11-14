@@ -1426,23 +1426,23 @@
 							"console.log(\"Json file batchName ::\" +pm.variables.get('batchName'));\r",
 							"console.log(\"CollectionVariable Name::\" + pm.collectionVariables.get('programId1'));\r",
 							"\r",
-							"if(pm.variables.get('batchName') == \"prg1Oracle61\")\r",
+							"if(pm.variables.get('batchName') == \"prg1Oracle71\")\r",
 							"{   \r",
 							"    pm.variables.set(\"programId\",pm.collectionVariables.get('programId1'));\r",
 							"    pm.variables.set('programName',pm.collectionVariables.get('programName1'))\r",
 							"}\r",
-							"else if((pm.variables.get('batchName') == \"prg1Oracle62\"))\r",
+							"else if((pm.variables.get('batchName') == \"prg1Oracle72\"))\r",
 							"{\r",
 							"      pm.variables.set(\"programId\",pm.collectionVariables.get('programId1'));\r",
 							"    pm.variables.set('programName',pm.collectionVariables.get('programName1'))\r",
 							"\r",
 							"}\r",
-							"else if((pm.variables.get('batchName') == \"prg1Python61\"))\r",
+							"else if((pm.variables.get('batchName') == \"prg1Python71\"))\r",
 							"{\r",
 							"      pm.variables.set(\"programId\",pm.collectionVariables.get('programId2'));\r",
 							"    pm.variables.set('programName',pm.collectionVariables.get('programName2'))\r",
 							"}\r",
-							"else if((pm.variables.get('batchName') == \"prg1Python62\"))\r",
+							"else if((pm.variables.get('batchName') == \"prg1Python72\"))\r",
 							"{\r",
 							"     pm.variables.set(\"programId\",pm.collectionVariables.get('programId2'));\r",
 							"    pm.variables.set('programName',pm.collectionVariables.get('programName2'))\r",
@@ -1515,22 +1515,22 @@
 							"\r",
 							"const result = JSON.parse(responseBody)\r",
 							"console.log(\"BAtch ID:\"+ result.batchId  + result.batchName);\r",
-							"if (pm.response.code === 201 && result.batchName === \"prg1Oracle61\") {    \r",
+							"if (pm.response.code === 201 && result.batchName === \"prg1Oracle71\") {    \r",
 							"    console.log('creating collectionVariable - prog1batchId1 && prog1batchName1.');          \r",
 							"    pm.collectionVariables.set(\"prg1_batchId1\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg1_batchName1\", result.batchName); \r",
 							"}\r",
-							"else if (pm.response.code === 201 && result.batchName === \"prg1Oracle62\") {  \r",
+							"else if (pm.response.code === 201 && result.batchName === \"prg1Oracle72\") {  \r",
 							"    console.log('creating collectionVariable - prog1batchId2 && prog1batchName2.');       \r",
 							"    pm.collectionVariables.set(\"prg1_batchId2\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg1_batchName2\", result.batchName); \r",
 							"}\r",
-							"else if (pm.response.code === 201 && result.batchName === \"prg1Python61\") {   \r",
+							"else if (pm.response.code === 201 && result.batchName === \"prg1Python71\") {   \r",
 							"   console.log('creating collectionVariable - prog2batchId1 && prog2batchName1.');          \r",
 							"    pm.collectionVariables.set(\"prg2_batchId1\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg2_batchName1\", result.batchName); \r",
 							"}\r",
-							"else if (pm.response.code === 201 && result.batchName === \"prg1Python62\") {   \r",
+							"else if (pm.response.code === 201 && result.batchName === \"prg1Python72\") {   \r",
 							"   console.log('creating collectionVariable - prog2batchId2 && prog2batchName2.');          \r",
 							"    pm.collectionVariables.set(\"prg2_batchId2\", result.batchId);  \r",
 							"    pm.collectionVariables.set(\"prg2_batchName2\", result.batchName); \r",
@@ -2376,163 +2376,6 @@
 			"response": []
 		},
 		{
-			"name": "GET_CLASS_RECRD_BYBATCHID",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "f656edec-43c6-456b-8601-b3cf89046fc7",
-						"exec": [
-							"var method=pm.variables.get('method');\r",
-							"pm.variables.set('METHOD',method);\r",
-							"\r",
-							"// Set AUTHORIZATION variable to baseURL\r",
-							"pm.variables.set('AUTHORIZATION', pm.collectionVariables.get('baseURL'));\r",
-							"\r",
-							"// Add Authorization header\r",
-							"pm.request.headers.add({\r",
-							"  key: 'Authorization',\r",
-							"  value: pm.variables.get('AUTHORIZATION')\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "b55e8f71-b3ca-44de-a229-4e64c833ea73",
-						"exec": [
-							"\r",
-							"var getClassRecordingsByBatchIdSchema={\r",
-							"  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
-							"  \"title\": \"Generated Recordings Response\",\r",
-							"    \"type\": \"object\",\r",
-							"    \"properties\": {\r",
-							"      \"csId\": {\r",
-							"        \"type\":  [\"number\", \"null\"]\r",
-							"        },\r",
-							"      \"classRecordingPath\": {\r",
-							"        \"type\":  [\"string\", \"null\"]\r",
-							"      }\r",
-							"    },\r",
-							"    \"required\": [\r",
-							"      \"csId\",\r",
-							"\t  \"classRecordingPath\"\r",
-							"    ]\r",
-							"}\r",
-							"\r",
-							"if(pm.response.code === 200){\r",
-							"    pm.test(\"getClassRecordingsByBatchIdSchema Validation\",function ()\r",
-							"    {\r",
-							"        pm.response.to.have.jsonSchema(getClassRecordingsByBatchIdSchema);\r",
-							"    });\r",
-							"\r",
-							"    pm.test(\"Content-Type-Validation\",function () {\r",
-							"        pm.response.to.have.header('Content-Type', 'application/json');\r",
-							"    });\r",
-							"\r",
-							"    pm.test(\"Data Type Validation -- GET CLASS RECORDINGS BY BATCH ID\", function () {\r",
-							"    const result = pm.response.json();  // Parse the JSON response\r",
-							"   \r",
-							"        // Validate csId: should be a number or null\r",
-							"       // pm.expect(result).to.have.property('csId');\r",
-							"        pm.expect(result.csId).to.satisfy(val => typeof val === 'number' || val === null);\r",
-							"\r",
-							"        // Validate classRecordingPath: should be a string or null\r",
-							"      //  pm.expect(result).to.have.property('classRecordingPath');\r",
-							"        pm.expect(result.classRecordingPath).to.satisfy(val => typeof val === 'string' || val === null);\r",
-							"    });\r",
-							"}\r",
-							"\r",
-							"\r",
-							"pm.test(\"StatusCodeValidation\", function () {\r",
-							" const expStatusCode = pm.variables.get('expectedStatusCode');\r",
-							"    pm.response.to.have.status(expStatusCode);    \r",
-							"});\r",
-							"\r",
-							"\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"id": "a85bff9d-0dd8-43cd-b18c-de52277067b2",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "{{METHOD}}",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{baseURL}}{{endpoint}}{{prg2_batchId2}}"
-			},
-			"response": []
-		},
-		{
-			"name": "GET_CLASS_CSID",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "8e609df7-d707-497c-bce0-9b3141557798",
-						"exec": [
-							"var method=pm.variables.get('method');\r",
-							"pm.variables.set('METHOD',method);\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "c4c4f853-2fce-413b-bbdc-721ddd0cbe68",
-						"exec": [
-							"pm.test(\"StatusCodeValidation\", function () {\r",
-							" const expStatusCode = pm.variables.get('expectedStatusCode');\r",
-							"    pm.response.to.have.status(expStatusCode);    \r",
-							"});"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"id": "d61e215f-7aea-4a5a-95cf-3024fa6be046",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "{{METHOD}}",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{baseURL}}{{endpoint}}{{classId}}"
-			},
-			"response": []
-		},
-		{
 			"name": "GET ALL CLASSES BY BATCHID",
 			"event": [
 				{
@@ -2852,6 +2695,112 @@
 			"response": []
 		},
 		{
+			"name": "GET_CLASS_RECRD_BYBATCHID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f656edec-43c6-456b-8601-b3cf89046fc7",
+						"exec": [
+							"var method=pm.variables.get('method');\r",
+							"pm.variables.set('METHOD',method);\r",
+							"\r",
+							"// Set AUTHORIZATION variable to baseURL\r",
+							"pm.variables.set('AUTHORIZATION', pm.collectionVariables.get('baseURL'));\r",
+							"\r",
+							"// Add Authorization header\r",
+							"pm.request.headers.add({\r",
+							"  key: 'Authorization',\r",
+							"  value: pm.variables.get('AUTHORIZATION')\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b55e8f71-b3ca-44de-a229-4e64c833ea73",
+						"exec": [
+							"\r",
+							"var getClassRecordingsByBatchIdSchema={\r",
+							"  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+							"  \"title\": \"Generated Recordings Response\",\r",
+							"    \"type\": \"object\",\r",
+							"    \"properties\": {\r",
+							"      \"csId\": {\r",
+							"        \"type\":  [\"number\", \"null\"]\r",
+							"        },\r",
+							"      \"classRecordingPath\": {\r",
+							"        \"type\":  [\"string\", \"null\"]\r",
+							"      }\r",
+							"    },\r",
+							"    \"required\": [\r",
+							"      \"csId\",\r",
+							"\t  \"classRecordingPath\"\r",
+							"    ]\r",
+							"}\r",
+							"\r",
+							"if(pm.response.code === 200){\r",
+							"    pm.test(\"getClassRecordingsByBatchIdSchema Validation\",function ()\r",
+							"    {\r",
+							"        pm.response.to.have.jsonSchema(getClassRecordingsByBatchIdSchema);\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Content-Type-Validation\",function () {\r",
+							"        pm.response.to.have.header('Content-Type', 'application/json');\r",
+							"    });\r",
+							"\r",
+							"    pm.test(\"Data Type Validation -- GET CLASS RECORDINGS BY BATCH ID\", function () {\r",
+							"    const result = pm.response.json();  // Parse the JSON response\r",
+							"   \r",
+							"        // Validate csId: should be a number or null\r",
+							"       // pm.expect(result).to.have.property('csId');\r",
+							"        pm.expect(result.csId).to.satisfy(val => typeof val === 'number' || val === null);\r",
+							"\r",
+							"        // Validate classRecordingPath: should be a string or null\r",
+							"      //  pm.expect(result).to.have.property('classRecordingPath');\r",
+							"        pm.expect(result.classRecordingPath).to.satisfy(val => typeof val === 'string' || val === null);\r",
+							"    });\r",
+							"}\r",
+							"\r",
+							"\r",
+							"pm.test(\"StatusCodeValidation\", function () {\r",
+							" const expStatusCode = pm.variables.get('expectedStatusCode');\r",
+							"    pm.response.to.have.status(expStatusCode);    \r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "a85bff9d-0dd8-43cd-b18c-de52277067b2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "{{METHOD}}",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}{{endpoint}}{{prg2_batchId2}}"
+			},
+			"response": []
+		},
+		{
 			"name": "GET ALL RECORDINGS",
 			"event": [
 				{
@@ -3037,6 +2986,57 @@
 				"method": "{{METHOD}}",
 				"header": [],
 				"url": "{{baseURL}}{{GetClassRecordingsByClassIdEndpoint}}{{classId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "GET_CLASS_CSID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8e609df7-d707-497c-bce0-9b3141557798",
+						"exec": [
+							"var method=pm.variables.get('method');\r",
+							"pm.variables.set('METHOD',method);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c4c4f853-2fce-413b-bbdc-721ddd0cbe68",
+						"exec": [
+							"pm.test(\"StatusCodeValidation\", function () {\r",
+							" const expStatusCode = pm.variables.get('expectedStatusCode');\r",
+							"    pm.response.to.have.status(expStatusCode);    \r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"id": "d61e215f-7aea-4a5a-95cf-3024fa6be046",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "{{METHOD}}",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseURL}}{{endpoint}}{{classId}}"
 			},
 			"response": []
 		},
