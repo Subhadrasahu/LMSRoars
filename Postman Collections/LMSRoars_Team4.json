@@ -1593,7 +1593,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},  \r\n  \"programName\":\"{{programName}}\"\r\n }",
+					"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programId}},  \r\n  \"programName\":\"{{programName}}\"\r\n }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -4231,7 +4231,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b45498ce-17a8-41fc-80ac-0adec8410ac5",
+				"id": "6ba7690c-4081-41c9-9772-d5cb8123d83e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -4279,7 +4279,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5ef2f930-60ab-4d79-a812-d8b0642083c5",
+				"id": "08260ad7-5563-44e0-951f-4cc6443e9766",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -4328,14 +4328,6 @@
 		},
 		{
 			"key": "classId",
-			"value": ""
-		},
-		{
-			"key": "batchID",
-			"value": ""
-		},
-		{
-			"key": "Token",
 			"value": ""
 		},
 		{
