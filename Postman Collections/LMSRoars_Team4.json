@@ -658,6 +658,8 @@
 							"      pm.collectionVariables.set(\"deleteprogramName1\",programname);\r",
 							"      incr++;\r",
 							"      pm.collectionVariables.set(\"increment\", incr);\r",
+							"      \r",
+							"\r",
 							"      pm.test(\"Validate Program Name in response\", function () {   \r",
 							"  var program_name = pm.collectionVariables.get(programnm);\r",
 							"  var result = pm.response.json();\r",
